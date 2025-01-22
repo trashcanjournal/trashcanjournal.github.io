@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Can Journal</title>
+    <style>
+        @font-face {
+            font-family: 'W95FA';
+               src: url('W95FA.woff2') format('woff2'),
+                 url('W95FA.woff') format('woff'),
+                 url('W95FA.ttf') format('truetype'),
+                 url('W95FA.otf') format('opentype');
+        }
+
+        
+        body {
+            margin: 0;
+            font-family:'W95FA' , sans-serif;
+                                                
+            color: black;
+            -webkit-text-stroke:
+            font-weight: bold;
+        }
+        .landing-page {
+            background-color: pink;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .trashcan-logo {
+            width: 150px;
+            height: auto;
+            cursor: pointer;
+        
+        }
+        .recycle-bin-page {
+            background-color: pink;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 3px solid black;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 10px 10px 0px #000;
+        }
+        .recycle-bin-page h1 {
+            font-size: 24px;
+            margin: 0 0 10px;
+        }
+        .recycle-bin-page ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .recycle-bin-page ul li {
+            margin: 5px 0;
+        }
+
+    
+     @import url('https://fonts.cdnfonts.com/css/w95fa');
+
+                
+    </style>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div class="landing-page">
+      
+        <img src="assets/logo.png" alt="Trash Can Logo" class="trashcan-logo" onclick="location.href='recycle-bin.html'">
+          <h1><b>Trash Can Journal</b></h1>
+    </div>
+
+    <!-- Recycle Bin Page -->
+    <div id="recycle-bin" style="display:none;">
+        <div class="recycle-bin-page">
+            <h1>Recycle Bin</h1>
+            <p>Your discarded treasures await!</p>
+            <ul>
+                <li>Item 1: "Garbage Thoughts"</li>
+                <li>Item 2: "Crumpled Dreams"</li>
+                <li>Item 3: "Half-baked Poems"</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    // Script to handle navigation
+    const trashcanLogo = document.querySelector('.trashcan-logo');
+    const recycleBin = document.getElementById('recycle-bin');
+    trashcanLogo.addEventListener('click', function(){   
+        
+
+            bin.open html.trash
+
+                                  
