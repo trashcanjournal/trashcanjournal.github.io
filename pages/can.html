@@ -55,6 +55,25 @@
             -webkit-text-stroke: 0.5px white;
             font-weight: bold;
         }
+        
+          img {
+        width: 500px;
+        height: auto;
+    }
+
+    /* Mobile view: screens smaller than 768px */
+    @media (max-width: 768px) {
+        img {
+            width: 300px; /* Smaller size for mobile */
+        }
+    }
+
+    /* Extra small devices like phones (up to 480px wide) */
+    @media (max-width: 480px) {
+        img {
+            width: 300px; /* Even smaller for very small screens */
+        }
+    }
     </style>
 </head>
 <body>
