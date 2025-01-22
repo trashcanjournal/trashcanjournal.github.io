@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycle Bin</title>
+    <style>
+        @font-face {
+            font-family: 'W95FA';
+            src: url('fonts/W95FA.woff2') format('woff2'),
+                 url('fonts/W95FA.woff') format('woff'),
+                 url('fonts/W95FA.ttf') format('truetype'),
+                 url('fonts/W95FA.otf') format('opentype');
+        }
+
+        body {
+            margin: 0;
+            font-family: 'W95FA', Tahoma, Verdana, Arial, sans-serif;
+            background: url('recycle-bin-bg.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border: 3px solid black;
+            box-shadow: 10px 10px 0px #000;
+        }
+
+        .file {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .file img {
+            width: 64px;
+            height: auto;
+        }
+
+        .file span {
+            margin-top: 5px;
+            font-size: 16px;
+            color: grey;
+            -webkit-text-stroke: 0.5px white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="file-container">
+        <div class="file">
+            <img src="file1.png" alt="File 1">
+            <span>Garbage Thoughts</span>
+        </div>
+        <div class="file">
+            <img src="file2.png" alt="File 2">
+            <span>Crumpled Dreams</span>
+        </div>
+        <div class="file">
+            <img src="file3.png" alt="File 3">
+            <span>Half-baked Poems</span>
+        </div>
+    </div>
+</body>
+</html>
