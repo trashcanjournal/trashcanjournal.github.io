@@ -95,7 +95,12 @@
     'assets/t46.png', 'assets/t47.png', 'assets/t48.png'
         ];
             let lastMove = 0; // Store the timestamp of the last mousemove event
-        const debounceInterval = 60;
+        const debounceInterval = 100;
+             // Only create a new image if enough time has passed
+            if (currentTime - lastMoveTime < delay) return;
+
+            lastMoveTime = currentTime;
+
 
         document.addEventListener('mousemove', function(event) {
             // Create a new image element
