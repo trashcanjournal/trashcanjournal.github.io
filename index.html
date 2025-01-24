@@ -94,28 +94,25 @@
     'assets/t41.png', 'assets/t42.png', 'assets/t43.png', 'assets/t44.png', 'assets/t45.png',
     'assets/t46.png', 'assets/t47.png', 'assets/t48.png'
         ];
-            let lastMove = 0; // Store the timestamp of the last mousemove event
-        const debounceInterval = 100;
-             // Only create a new image if enough time has passed
-            if (currentTime - lastMoveTime < delay) return;
+             let lastMoveTime = 0; // Track the last time an image was created
+        const delay = 100; // Delay in milliseconds between each image
 
-            lastMoveTime = currentTime;
+        // Set an interval to create images every 100ms
+        setInterval(function() {
+            // Track the mouse position every 100ms
+            document.addEventListener('mousemove', function(event) {
+                // Create a new image element
+                const img = document.createElement('img');
+                const randomIndex = Math.floor(Math.random() * images.length);
+                img.src = images[randomIndex];
 
+                img.classList.add('cursor-image');
+                img.style.left = `${event.pageX}px`;
+                img.style.top = `${event.pageY}px`;
 
-        document.addEventListener('mousemove', function(event) {
-            // Create a new image element
-            const img = document.createElement('img');
-            
-            // Randomly select an image from the array
-            const randomIndex = Math.floor(Math.random() * images.length);
-            img.src = images[randomIndex];
-
-            img.classList.add('cursor-image');
-            img.style.left = `${event.pageX}px`;
-            img.style.top = `${event.pageY}px`;
-
-            document.body.appendChild(img);
-        });
+                document.body.appendChild(img);
+            });
+        }, delay);
     </script>
 </body>
 </html>
