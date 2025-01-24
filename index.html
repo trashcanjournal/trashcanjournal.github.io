@@ -7,22 +7,20 @@
     <style>
         @font-face {
             font-family: 'W95FA';
-               src: url('W95FA.woff2') format('woff2'),
+            src: url('W95FA.woff2') format('woff2'),
                  url('W95FA.woff') format('woff'),
                  url('W95FA.ttf') format('truetype'),
                  url('W95FA.otf') format('opentype');
         }
 
-        
         body {
             margin: 0;
-            font-family:'W95FA' , sans-serif;
-                                                
+            font-family: 'W95FA', sans-serif;
             color: black;
-            -webkit-text-stroke:
-            font-weight: bold;
+            -webkit-text-stroke: bold;
             cursor: none;
         }
+
         .landing-page {
             background-color: pink;
             height: 100vh;
@@ -31,76 +29,60 @@
             align-items: center;
             flex-direction: column;
         }
+
         .trashcan-logo {
             width: 150px;
             height: auto;
             cursor: pointer;
-           
-             z-index: 1000;
-        
+            z-index: 1000;
         }
-        
-        
-.cursor-image {
-            position: absolute;
-            width: 300px; 
-            height: auto;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-    
-     @import url('https://fonts.cdnfonts.com/css/w95fa');
 
-                
+        .cursor-image {
+            position: absolute;
+            width: 50px; /* Smaller size for smoother appearance */
+            height: auto;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+        @import url('https://fonts.cdnfonts.com/css/w95fa');
     </style>
 </head>
 <body>
     <!-- Landing Page -->
     <div class="landing-page">
-      
         <img src="assets/logo.png" alt="Trash Can Logo" class="trashcan-logo" onclick="location.href='pages/can.html'">
-         <img src="assets/translogo.png" alt="Trash Can Logo" style="width: 300px; height: auto;" class="trashcan-logo" onclick="location.href='pages/can.html'">
-          
+        <img src="assets/translogo.png" alt="Trash Can Logo" style="width: 300px; height: auto;" class="trashcan-logo" onclick="location.href='pages/can.html'">
     </div>
 
-    <!-- Recycle Bin Page -->
-    <div id="recycle-bin" style="display:none;">
-        <div class="recycle-bin-page">
-            <h1>Recycle Bin</h1>
-            <p>Your discarded treasures await!</p>
-            <ul>
-                <li>Item 1: "Garbage Thoughts"</li>
-                <li>Item 2: "Crumpled Dreams"</li>
-                <li>Item 3: "Half-baked Poems"</li>
-            </ul>
-        </div>
-    </div>
-
-        <script>
-        // Array of image sources
+    <script>
         const images = [
             'assets/t1.png',
             'assets/t2.png',
             'assets/t3.png',
             'assets/t4.png',
             'assets/t5.png',
-             'assets/t6.png', 'assets/t7.png', 'assets/t8.png', 'assets/t9.png', 'assets/t10.png',
-    'assets/t11.png', 'assets/t12.png', 'assets/t13.png', 'assets/t14.png', 'assets/t15.png',
-    'assets/t16.png', 'assets/t17.png', 'assets/t18.png', 'assets/t19.png', 'assets/t20.png',
-    'assets/t21.png', 'assets/t22.png', 'assets/t23.png', 'assets/t24.png', 'assets/t25.png',
-    'assets/t26.png', 'assets/t27.png', 'assets/t28.png', 'assets/t29.png', 'assets/t30.png',
-    'assets/t31.png', 'assets/t32.png', 'assets/t33.png', 'assets/t34.png', 'assets/t35.png',
-    'assets/t36.png', 'assets/t37.png', 'assets/t38.png', 'assets/t39.png', 'assets/t40.png',
-    'assets/t41.png', 'assets/t42.png', 'assets/t43.png', 'assets/t44.png', 'assets/t45.png',
-    'assets/t46.png', 'assets/t47.png', 'assets/t48.png'
+            'assets/t6.png', 'assets/t7.png', 'assets/t8.png', 'assets/t9.png', 'assets/t10.png',
+            'assets/t11.png', 'assets/t12.png', 'assets/t13.png', 'assets/t14.png', 'assets/t15.png',
+            'assets/t16.png', 'assets/t17.png', 'assets/t18.png', 'assets/t19.png', 'assets/t20.png',
+            'assets/t21.png', 'assets/t22.png', 'assets/t23.png', 'assets/t24.png', 'assets/t25.png',
+            'assets/t26.png', 'assets/t27.png', 'assets/t28.png', 'assets/t29.png', 'assets/t30.png',
+            'assets/t31.png', 'assets/t32.png', 'assets/t33.png', 'assets/t34.png', 'assets/t35.png',
+            'assets/t36.png', 'assets/t37.png', 'assets/t38.png', 'assets/t39.png', 'assets/t40.png',
+            'assets/t41.png', 'assets/t42.png', 'assets/t43.png', 'assets/t44.png', 'assets/t45.png',
+            'assets/t46.png', 'assets/t47.png', 'assets/t48.png'
         ];
-             let lastMoveTime = 0; // Track the last time an image was created
-        const delay = 500; // Delay in milliseconds between each image
 
-        // Set an interval to create images every 500ms
-        setInterval(function() {
-            // Track the mouse position every 500ms
-            document.addEventListener('mousemove', function(event) {
+        let lastMoveTime = 0; // Store the timestamp of the last image creation
+        const delay = 500; // Delay in milliseconds between image creation
+
+        document.addEventListener('mousemove', function(event) {
+            const currentTime = Date.now();
+            
+            // Only create a new image if enough time has passed
+            if (currentTime - lastMoveTime >= delay) {
+                lastMoveTime = currentTime;
+
                 // Create a new image element
                 const img = document.createElement('img');
                 const randomIndex = Math.floor(Math.random() * images.length);
@@ -111,9 +93,8 @@
                 img.style.top = `${event.pageY}px`;
 
                 document.body.appendChild(img);
-            });
-        }, delay);
+            }
+        });
     </script>
 </body>
 </html>
-                                  
