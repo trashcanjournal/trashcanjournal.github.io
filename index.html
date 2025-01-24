@@ -85,19 +85,34 @@
         ];
 
         document.addEventListener('mousemove', function(event) {
-            // Create a new image element
-            const img = document.createElement('img');
-            
-            // Randomly select an image from the array
-            const randomIndex = Math.floor(Math.random() * images.length);
-            img.src = images[randomIndex];
+        // Create a new image element
+        const img = document.createElement('img');
+        
+        // Randomly select an image from the array
+        const randomIndex = Math.floor(Math.random() * images.length);
+        img.src = images[randomIndex];
 
-            img.classList.add('cursor-image');
-            img.style.left = `${event.pageX}px`;
-            img.style.top = `${event.pageY}px`;
+        img.classList.add('cursor-image');
 
-            document.body.appendChild(img);
-        });
+        // Randomize image size between 150px to 300px
+        const randomSize = Math.floor(Math.random() * 150) + 150;
+        img.style.width = `${randomSize}px`;
+
+        // Add a slight random offset to avoid exact overlapping
+        const randomOffsetX = Math.floor(Math.random() * 50) - 25;  // Range: -25 to +25
+        const randomOffsetY = Math.floor(Math.random() * 50) - 25;
+
+        img.style.left = `${event.pageX + randomOffsetX}px`;
+        img.style.top = `${event.pageY + randomOffsetY}px`;
+
+        // Append image inside the image container (below the logo)
+        document.getElementById('imageContainer').appendChild(img);
+
+        // Limit the number of images to prevent overcrowding
+        if (document.getElementById('imageContainer').childElementCount > 30) {
+            document.getElementById('imageContainer').removeChild(document.getElementById('imageContainer').firstChild);
+        }
+    });
     </script>
 </body>
 </html>
