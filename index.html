@@ -39,7 +39,7 @@
 
         .cursor-image {
             position: absolute;
-            width: 50px; /* Smaller size for smoother appearance */
+            width: 300px; /* Smaller size for smoother appearance */
             height: auto;
             pointer-events: none;
             transform: translate(-50%, -50%);
@@ -74,7 +74,7 @@
         ];
 
         let lastMoveTime = 0; // Store the timestamp of the last image creation
-        const delay = 500; // Delay in milliseconds between image creation
+        const delay = 300; // Delay in milliseconds between image creation
 
         document.addEventListener('mousemove', function(event) {
             const currentTime = Date.now();
