@@ -21,6 +21,7 @@
             color: black;
             -webkit-text-stroke:
             font-weight: bold;
+            cursor: none;
         }
         .landing-page {
             background-color: pink;
@@ -34,33 +35,18 @@
             width: 150px;
             height: auto;
             cursor: pointer;
+            position: fixed;
         
         }
-        .recycle-bin-page {
-            background-color: pink;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            border: 3px solid black;
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            box-shadow: 10px 10px 0px #000;
+        
+        
+.cursor-image {
+            position: absolute;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
         }
-        .recycle-bin-page h1 {
-            font-size: 24px;
-            margin: 0 0 10px;
-        }
-        .recycle-bin-page ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .recycle-bin-page ul li {
-            margin: 5px 0;
-        }
-
     
      @import url('https://fonts.cdnfonts.com/css/w95fa');
 
@@ -88,14 +74,41 @@
             </ul>
         </div>
     </div>
+
+        <script>
+        // Array of image sources
+        const images = [
+            'assets/t1.png',
+            'assets/t2.png',
+            'assets/t3.png',
+            'assets/t4.png',
+            'assets/t5.png',
+             'assets/t6.png', 'assets/t7.png', 'assets/t8.png', 'assets/t9.png', 'assets/t10.png',
+    'assets/t11.png', 'assets/t12.png', 'assets/t13.png', 'assets/t14.png', 'assets/t15.png',
+    'assets/t16.png', 'assets/t17.png', 'assets/t18.png', 'assets/t19.png', 'assets/t20.png',
+    'assets/t21.png', 'assets/t22.png', 'assets/t23.png', 'assets/t24.png', 'assets/t25.png',
+    'assets/t26.png', 'assets/t27.png', 'assets/t28.png', 'assets/t29.png', 'assets/t30.png',
+    'assets/t31.png', 'assets/t32.png', 'assets/t33.png', 'assets/t34.png', 'assets/t35.png',
+    'assets/t36.png', 'assets/t37.png', 'assets/t38.png', 'assets/t39.png', 'assets/t40.png',
+    'assets/t41.png', 'assets/t42.png', 'assets/t43.png', 'assets/t44.png', 'assets/t45.png',
+    'assets/t46.png', 'assets/t47.png', 'assets/t48.png'
+        ];
+
+        document.addEventListener('mousemove', function(event) {
+            // Create a new image element
+            const img = document.createElement('img');
+            
+            // Randomly select an image from the array
+            const randomIndex = Math.floor(Math.random() * images.length);
+            img.src = images[randomIndex];
+
+            img.classList.add('cursor-image');
+            img.style.left = `${event.pageX}px`;
+            img.style.top = `${event.pageY}px`;
+
+            document.body.appendChild(img);
+        });
+    </script>
 </body>
-<script>
-    // Script to handle navigation
-    const trashcanLogo = document.querySelector('.trashcan-logo');
-    const recycleBin = document.getElementById('recycle-bin');
-    trashcanLogo.addEventListener('click', function(){   
-        
-
-            bin.open html.trash
-
+</html>
                                   
