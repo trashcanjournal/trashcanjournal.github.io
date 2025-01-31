@@ -83,7 +83,8 @@
                 // Create a new image element
                 const img = document.createElement('img');
                 const randomIndex = Math.floor(Math.random() * images.length);
-                img.src = images[randomIndex];
+                img.src = images[currentIndex];
+                    currentIndex = (currentIndex + 1) % images.length;
 
                 img.classList.add('cursor-image');
                 img.style.left = `${event.pageX}px`;
