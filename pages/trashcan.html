@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Can Journal</title>
+    <style>
+        @font-face {
+            font-family: 'W95FA';
+            src: url('W95FA.woff2') format('woff2'),
+                 url('W95FA.woff') format('woff'),
+                 url('W95FA.ttf') format('truetype'),
+                 url('W95FA.otf') format('opentype');
+        }
+
+        body {
+            margin: 0;
+            font-family: 'W95FA', sans-serif;
+            color: black;
+            -webkit-text-stroke: bold;
+            cursor: none;
+        }
+
+        .landing-page {
+            background-color: pink;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .trashcan-logo {
+            width: 150px;
+            height: auto;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .cursor-image {
+            position: absolute;
+            width: 300px; /* Smaller size for smoother appearance */
+            height: auto;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+        @import url('https://fonts.cdnfonts.com/css/w95fa');
+    </style>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div class="landing-page">
+        <img src="assets/file1.png" alt="file1" class="file" onclick="location.href='pages/can.html'">
+        <img src="assets/file2.png" alt="file2" style="width: 300px; height: auto;" class="file" onclick="location.href='pages/can.html'">
+    </div>
+    
+
+    <script>
+       
+    </script>
+</body>
+</html>
