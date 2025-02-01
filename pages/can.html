@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recycle Bin</title>
+    <title>Trash Can Journal</title>
     <style>
         @font-face {
             font-family: 'W95FA';
@@ -15,69 +15,85 @@
 
         body {
             margin: 0;
-            font-family: 'W95FA', Tahoma, Verdana, Arial, sans-serif;
-            font-size: 50px;
-            background: url('recycle-bin-bg.png') no-repeat center center fixed;
-            background-size: cover;
+            font-family: 'W95FA', sans-serif;
+            color: black;
+            -webkit-text-stroke: bold;
+            cursor: none;
+        }
+
+        .landing-page {
+            background-color: pink;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-        }
-
-        .file-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border: 3px solid black;
-            box-shadow: 10px 10px 0px #000;
-        }
-
-        .file {
-            display: flex;
             flex-direction: column;
-            align-items: center;
-            cursor: pointer;
         }
 
-        .file img {
-            width: 64px;
+        .trashcan-logo {
+            width: 150px;
             height: auto;
+            cursor: pointer;
+            z-index: 1000;
         }
 
-        .file span {
-            margin-top: 5px;
-            font-size: 16px;
-            color: grey;
-            -webkit-text-stroke: 0.5px white;
-            font-weight: bold;
+        .cursor-image {
+            position: absolute;
+            width: 300px; /* Smaller size for smoother appearance */
+            height: auto;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
         }
-        
-          img {
-        width: 500px;
-        height: auto;
-    }
 
-    /* Mobile view: screens smaller than 768px */
-    @media (max-width: 768px) {
-        img {
-            width: 300px; /* Smaller size for mobile */
-        }
-    }
-
-    /* Extra small devices like phones (up to 480px wide) */
-    @media (max-width: 480px) {
-        img {
-            width: 300px; /* Even smaller for very small screens */
-        }
-    }
+        @import url('https://fonts.cdnfonts.com/css/w95fa');
     </style>
 </head>
 <body>
-     <img src="assets/trash1.png" alt="Coming Soon" style="position: absolute; top: 0; left: 0;">
-         <img src="assets/trash2.png" alt="Coming Soon" style="position: absolute; top: 240px; left: 60px;" onclick="window.location.href='https://trashcanjournal.github.io/';">
+    <!-- Landing Page -->
+    <div class="landing-page">
+        <img src="assets/logo.png" alt="Trash Can Logo" class="trashcan-logo" onclick="location.href='pages/can.html'">
+        <img src="assets/translogo.png" alt="Trash Can Logo" style="width: 300px; height: auto;" class="trashcan-logo" onclick="location.href='pages/can.html'">
+    </div>
+    This is a test to see how text will appear on this page.
+
+    <script>
+        let currentIndex = 0;
+        const images = [
+            'assets/at1.png',
+            'assets/at2.png',
+            'assets/at3.png',
+            'assets/at4.png',
+            'assets/at5.png',
+            'assets/at6.png', 'assets/at7.png', 'assets/at8.png', 'assets/at9.png', 'assets/at10.png'
+        ];
+
+        let lastMoveTime = 0; // Store the timestamp of the last image creation
+        const delay = 200; // Delay in milliseconds between image creation
+
+        document.addEventListener('mousemove', function(event) {
+            const currentTime = Date.now();
+            
+            // Only create a new image if enough time has passed
+            if (currentTime - lastMoveTime >= delay) {
+                lastMoveTime = currentTime;
+
+                // Create a new image element
+                const img = document.createElement('img');
+                const randomIndex = Math.floor(Math.random() * images.length);
+                img.src = images[currentIndex];
+                    currentIndex = (currentIndex + 1) % images.length;
+
+                img.classList.add('cursor-image');
+                img.style.left = `${event.pageX}px`;
+                img.style.top = `${event.pageY}px`;
+
+                 const rotation = Math.random() < 0.5 ? (Math.random() * 15 - 10) : (Math.random() * 15 + 10); // Random rotation between -10 to 10 degrees
+                img.style.transform += ` rotate(${rotation}deg)`; // Apply rotation to the image
+
+
+                document.body.appendChild(img);
+            }
+        });
+    </script>
 </body>
 </html>
