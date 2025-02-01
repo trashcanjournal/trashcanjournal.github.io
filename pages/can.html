@@ -18,7 +18,6 @@
             font-family: 'W95FA', sans-serif;
             color: black;
             -webkit-text-stroke: bold;
-            cursor: none;
         }
 
         .landing-page {
@@ -33,23 +32,15 @@
         .trashcan-logo {
             width: 150px;
             height: auto;
-            cursor: pointer;
             z-index: 1000;
         }
 
-        .cursor-image {
-            position: absolute;
-            width: 300px; /* Smaller size for smoother appearance */
-            height: auto;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-        }
+       
 
         .text {
             font-family: 'W95FA', sans-serif;
             color: black;
             font-size: 50px;
-            cursor: pointer;
         }
 
         @import url('https://fonts.cdnfonts.com/css/w95fa');
@@ -67,43 +58,8 @@
     </div>
 
     <script>
-        let currentIndex = 0;
-        const images = [
-            'assets/at1.png',
-            'assets/at2.png',
-            'assets/at3.png',
-            'assets/at4.png',
-            'assets/at5.png',
-            'assets/at6.png', 'assets/at7.png', 'assets/at8.png', 'assets/at9.png', 'assets/at10.png', 'assets/test.png'
-        ];
 
-        let lastMoveTime = 0; // Store the timestamp of the last image creation
-        const delay = 200; // Delay in milliseconds between image creation
-
-        document.addEventListener('mousemove', function(event) {
-            const currentTime = Date.now();
-            
-            // Only create a new image if enough time has passed
-            if (currentTime - lastMoveTime >= delay) {
-                lastMoveTime = currentTime;
-
-                // Create a new image element
-                const img = document.createElement('img');
-                const randomIndex = Math.floor(Math.random() * images.length);
-                img.src = images[currentIndex];
-                    currentIndex = (currentIndex + 1) % images.length;
-
-                img.classList.add('cursor-image');
-                img.style.left = `${event.pageX}px`;
-                img.style.top = `${event.pageY}px`;
-
-                 const rotation = Math.random() < 0.5 ? (Math.random() * 15 - 10) : (Math.random() * 15 + 10); // Random rotation between -10 to 10 degrees
-                img.style.transform += ` rotate(${rotation}deg)`; // Apply rotation to the image
-
-
-                document.body.appendChild(img);
-            }
-        });
+       
     </script>
 </body>
 </html>
