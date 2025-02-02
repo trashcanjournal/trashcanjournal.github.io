@@ -31,35 +31,40 @@
             width: 150px;
             height: auto;
             object-fit: cover;
-           
-          
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
         }
         .label {
             position: absolute;
             font-size: 14px;
             background: white;
-            padding: 2px 5px;
-            border-radius: 3px;
+            padding: 0;
+            
             font-family: Arial, sans-serif;
         }
-        /* Custom Positions */
-        .img1 { top: 10px; left: 200px; transform: rotate(5deg); }
-        .img2 { top: 120px; left: 201px; transform: rotate(6deg); }
-        .img3 { top: 250px; left: 202px; transform: rotate(7deg); }
-        .img4 { top: 350px; left: 203px; transform: rotate(8deg); }
-        .img5 { top: 350px; left: 152px; transform: rotate(5deg); }
-        .img6 { top: 350px; left: 352px; transform: rotate(12deg); }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.image-container').forEach(container => {
+                let randomTop = Math.floor(Math.random() * 70) + "vh";
+                let randomLeft = Math.floor(Math.random() * 70) + "vw";
+                let randomRotation = Math.floor(Math.random() * 20 - 10) + "deg";
+                container.style.top = randomTop;
+                container.style.left = randomLeft;
+                container.style.transform = `rotate(${randomRotation})`;
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="gallery">
-        <div class="image-container img1"><img src="assets/at1.png"><span class="label">[01]</span></div>
-        <div class="image-container img2"><img src="assets/at2.png"><span class="label">[01]</span></div>
-        <div class="image-container img3"><img src="assets/at3.png"><span class="label">[01]</span></div>
-        <div class="image-container img4"><img src="assets/at4.png"><span class="label">[01]</span></div>
-        <div class="image-container img5"><img src="assets/at5.png"><span class="label">[01]</span></div>
-        <div class="image-container img6"><img src="assets/at6.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at1.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at2.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at3.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at4.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at5.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at6.png"><span class="label">[01]</span></div>
     </div>
 </body>
 </html>
