@@ -20,20 +20,12 @@
             height: 100vh;
         }
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            position: relative;
             width: 60vw;
-            max-width: 800px;
-            justify-content: center;
-            align-items: center;
+            height: 80vh;
         }
         .image-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: rotate(calc(-10deg + 20deg * var(--random-rotation)));
+            position: absolute;
         }
         .gallery img {
             width: 150px;
@@ -45,31 +37,29 @@
         }
         .label {
             position: absolute;
-            bottom: -10px;
-            right: -10px;
             font-size: 14px;
             background: white;
             padding: 2px 5px;
             border-radius: 3px;
             font-family: Arial, sans-serif;
         }
+        /* Custom Positions */
+        .img1 { top: 10px; left: 50px; transform: rotate(-5deg); }
+        .img2 { top: 120px; left: 200px; transform: rotate(8deg); }
+        .img3 { top: 250px; left: 20px; transform: rotate(-10deg); }
+        .img4 { top: 350px; left: 250px; transform: rotate(5deg); }
+        .img5 { top: 100px; left: 400px; transform: rotate(-7deg); }
+        .img6 { top: 400px; left: 100px; transform: rotate(12deg); }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll('.image-container').forEach(container => {
-                container.style.setProperty('--random-rotation', Math.random());
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="gallery">
-        <div class="image-container"><img src="assets/at1.png"><span class="label">[01]</span></div>
-        <div class="image-container"><img src="assets/at2.png"><span class="label">[01]</span></div>
-        <div class="image-container"><img src="assets/at3.png"><span class="label">[01]</span></div>
-        <div class="image-container"><img src="assets/at4.png"><span class="label">[01]</span></div>
-        <div class="image-container"><img src="assets/at5.png"><span class="label">[01]</span></div>
-        <div class="image-container"><img src="assets/at6.png"><span class="label">[01]</span></div>
+        <div class="image-container img1"><img src="assets/at1.png"><span class="label">[01]</span></div>
+        <div class="image-container img2"><img src="assets/at2.png"><span class="label">[01]</span></div>
+        <div class="image-container img3"><img src="assets/at3.png"><span class="label">[01]</span></div>
+        <div class="image-container img4"><img src="assets/at4.png"><span class="label">[01]</span></div>
+        <div class="image-container img5"><img src="assets/at5.png"><span class="label">[01]</span></div>
+        <div class="image-container img6"><img src="assets/at6.png"><span class="label">[01]</span></div>
     </div>
 </body>
 </html>
