@@ -21,16 +21,19 @@
             color: #F3CFC6;  /* fixed typo from 'font-color' to 'color' */
             font-size: 100px;
             position: relative;
-            z-index: 1;  /* Ensures text stays on top of images */
+            overflow: hidden;
         }
+
+        /* This container will have images behind the text */
         .gallery {
             position: absolute;
             top: 0;
             left: 0;
-            width: 60vw;
-            height: 80vh;
-            z-index: 0;  /* Ensures images appear behind the text */
+            width: 100%;
+            height: 100%;
+            z-index: -1;  /* Ensures the gallery is behind everything else */
         }
+
         .image-container {
             position: absolute;
         }
@@ -40,12 +43,21 @@
             object-fit: cover;
             transition: transform 0.3s ease-in-out;
         }
+
+        /* Keep the labels the same as before */
         .label {
             position: absolute;
             font-size: 14px;
             background: white;
             padding: 0;
             font-family: Arial, sans-serif;
+        }
+
+        /* Text will remain at the center */
+        .text-container {
+            position: relative;
+            z-index: 1;  /* This ensures the text stays on top of the images */
+            text-align: center;
         }
     </style>
     <script>
@@ -62,8 +74,8 @@
     </script>
 </head>
 <body>
-    <!-- Text above the images -->
-    <div>
+    <!-- Text displayed over images -->
+    <div class="text-container">
         [01] मेजर याकूब ऑफ़  फ र र स स्क्वाड्रन।  [02] सोल्जर, फ र प स  स्क्वाड्रन।  [03] दे ' र द मोस्ट  पावरफुल  रबैल  ग्रुप, [04] एंड पब्लिक एनिमी नो.1 ऑफ़ द सेंट्रल अफ्रीकन गोवेर्में।  [05] वेल आर्म्ड।  [06] इक्विपमेंट  स्टोलेन  फ्रॉम  द  स्टेट  आर्मी। 
         [01] Major Yacoub of FRRC squadron. [02] Soldier, FRPC squadron. [03] They're the most powerful rebel group, [04] and public enemy no.1 of the central African govt. [05] Well armed. [06] Equipment stolen from the state Army.
     </div>
