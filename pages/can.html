@@ -24,23 +24,17 @@
             overflow: auto;  /* Enable scrolling */
         }
 
-        /* This container will have images behind the text */
+        /* This container will have the single image behind the text */
         .gallery {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;  /* Ensures the gallery is behind everything else */
+            top: 20px;   /* 20px space from top */
+            left: 20px;  /* 20px space from left */
+            z-index: -1;  /* Ensures the image is behind everything else */
         }
 
-        .image-container {
-            position: absolute;
-        }
         .gallery img {
             width: 150px;
             object-fit: cover;
-            transition: transform 0.3s ease-in-out;
         }
 
         /* Keep the labels the same as before */
@@ -60,18 +54,6 @@
             padding: 20px;  /* Optional: Adds spacing around the text */
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll('.image-container').forEach(container => {
-                let randomTop = Math.floor(Math.random() * 70) + "vh";
-                let randomLeft = Math.floor(Math.random() * 70) + "vw";
-                let randomRotation = Math.floor(Math.random() * 20 - 10) + "deg";
-                container.style.top = randomTop;
-                container.style.left = randomLeft;
-                container.style.transform = `rotate(${randomRotation})`;
-            });
-        });
-    </script>
 </head>
 <body>
     <!-- Text displayed over images -->
@@ -82,12 +64,7 @@
 
     <!-- Image gallery behind the text -->
     <div class="gallery">
-        <div class="image-container"><img src="assets/at1.png" alt="Image description for at1"><span class="label">[01]</span></div>
-        <div class="image-container"><img src="assets/at2.png" alt="Image description for at2"><span class="label">[02]</span></div>
-        <div class="image-container"><img src="assets/at3.png" alt="Image description for at3"><span class="label">[03]</span></div>
-        <div class="image-container"><img src="assets/at4.png" alt="Image description for at4"><span class="label">[04]</span></div>
-        <div class="image-container"><img src="assets/at5.png" alt="Image description for at5"><span class="label">[05]</span></div>
-        <div class="image-container"><img src="assets/at6.png" alt="Image description for at6"><span class="label">[06]</span></div>
+        <img src="assets/at5.png" alt="Image description for at5">
     </div>
 </body>
 </html>
