@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scattered Image Layout</title>
     <style>
-      
        @font-face {
             font-family: 'W95FA';
             src: url('W95FA.woff2') format('woff2'),
@@ -21,56 +20,56 @@
             height: 100vh;
         }
         .gallery {
-            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             width: 60vw;
-            height: 80vh;
+            max-width: 800px;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-container {
+            position: relative;
             display: flex;
-            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(calc(-10deg + 20deg * var(--random-rotation)));
         }
         .gallery img {
-            position: absolute;
             width: 150px;
             height: auto;
             object-fit: cover;
             border-radius: 5px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
         }
         .label {
             position: absolute;
+            bottom: -10px;
+            right: -10px;
             font-size: 14px;
             background: white;
             padding: 2px 5px;
             border-radius: 3px;
             font-family: Arial, sans-serif;
         }
-        /* Custom Positions */
-        .img1 { top: 0px; left: 50px; }
-        .img2 { top: 120px; left: 200px; }
-        .img3 { top: 250px; left: 20px; }
-        .img4 { top: 350px; left: 250px; }
-        .img5 { top: 100px; left: 400px; }
-        .img6 { top: 400px; left: 100px; }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.image-container').forEach(container => {
+                container.style.setProperty('--random-rotation', Math.random());
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="gallery">
-        <img src="assets/at1.png" class="img1">
-        <span class="label img1">[01]</span>
-
-        <img src="assets/at2.png" class="img2">
-        <span class="label img2">[01]</span>
-
-        <img src="assets/at3.png" class="img3">
-        <span class="label img3">[01]</span>
-
-        <img src="assets/at4.png" class="img4">
-        <span class="label img4">[01]</span>
-
-        <img src="assets/at5.png" class="img5">
-        <span class="label img5">[01]</span>
-
-        <img src="at6.png" class="img6">
-        <span class="label img6">[01]</span>
+        <div class="image-container"><img src="assets/at1.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at2.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at3.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at4.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at5.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at6.png"><span class="label">[01]</span></div>
     </div>
 </body>
 </html>
