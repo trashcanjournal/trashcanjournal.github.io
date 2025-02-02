@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: #F3CFC6;  /* fixed typo from 'font-color' to 'color' */
+            font-color: #F3CFC6;
             font-size: 100px;
         }
         .gallery {
@@ -28,8 +28,6 @@
         }
         .image-container {
             position: absolute;
-            display: inline-block;
-            text-align: center;
         }
         .gallery img {
             width: 150px;
@@ -39,15 +37,11 @@
         }
         .label {
             position: absolute;
-            top: 10px; /* Adjust as needed */
-            left: 50%;
-            transform: translateX(-50%);
             font-size: 14px;
-            background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
-            padding: 5px;
+            background: white;
+            padding: 0;
+            
             font-family: Arial, sans-serif;
-            color: black;  /* Color of the text */
-            border-radius: 5px;
         }
     </style>
     <script>
@@ -58,37 +52,22 @@
                 let randomRotation = Math.floor(Math.random() * 20 - 10) + "deg";
                 container.style.top = randomTop;
                 container.style.left = randomLeft;
-                container.style.transform = `rotate(${randomRotation})`;
+                container.style.transform = rotate(${randomRotation});
             });
         });
     </script>
 </head>
 <body>
+    [01] मेजर याकूब ऑफ़  फ र र स स्क्वाड्रन।  [02] सोल्जर, फ र प स  स्क्वाड्रन।  [03] दे ' र द मोस्ट  पावरफुल  रबैल  ग्रुप, [04] एंड पब्लिक एनिमी नो.1 ऑफ़ द सेंट्रल अफ्रीकन गोवेर्में।  [05] वेल आर्म्ड।  [06] इक्विपमेंट  स्टोलेन  फ्रॉम  द  स्टेट  आर्मी। 
+    [01] Major Yacoub of FRRC squadron. [02] Soldier, FRPC squadron. [03] They're the most powerful rebel group, [04] and public enemy no.1 of the central African govt. [05] Well armed. [06] Equipment stolen from the state Army.
+    
     <div class="gallery">
-        <div class="image-container">
-            <img src="assets/at1.png" alt="Image description for at1">
-            <span class="label">[01] Major Yacoub of FRRC squadron</span>
-        </div>
-        <div class="image-container">
-            <img src="assets/at2.png" alt="Image description for at2">
-            <span class="label">[02] Soldier, FRPC squadron</span>
-        </div>
-        <div class="image-container">
-            <img src="assets/at3.png" alt="Image description for at3">
-            <span class="label">[03] They're the most powerful rebel group</span>
-        </div>
-        <div class="image-container">
-            <img src="assets/at4.png" alt="Image description for at4">
-            <span class="label">[04] And public enemy no.1 of the Central African govt.</span>
-        </div>
-        <div class="image-container">
-            <img src="assets/at5.png" alt="Image description for at5">
-            <span class="label">[05] Well armed</span>
-        </div>
-        <div class="image-container">
-            <img src="assets/at6.png" alt="Image description for at6">
-            <span class="label">[06] Equipment stolen from the state Army</span>
-        </div>
+        <div class="image-container"><img src="assets/at1.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at2.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at3.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at4.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at5.png"><span class="label">[01]</span></div>
+        <div class="image-container"><img src="assets/at6.png"><span class="label">[01]</span></div>
     </div>
 </body>
 </html>
