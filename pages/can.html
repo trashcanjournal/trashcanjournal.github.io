@@ -3,63 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trash Can Journal</title>
+    <title>Scattered Image Layout</title>
     <style>
-        @font-face {
+      
+       @font-face {
             font-family: 'W95FA';
             src: url('W95FA.woff2') format('woff2'),
                  url('W95FA.woff') format('woff'),
                  url('W95FA.ttf') format('truetype'),
                  url('W95FA.otf') format('opentype');
         }
-
         body {
-            margin: 0;
-            font-family: 'W95FA', sans-serif;
-            color: black;
-            -webkit-text-stroke: bold;
-        }
-
-        .landing-page {
-            background-color: pink;
-            height: 50vh;
+            background: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            height: 100vh;
         }
-
-        .trashcan-logo {
+        .gallery {
+            position: relative;
+            width: 60vw;
+            height: 80vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            position: absolute;
             width: 150px;
             height: auto;
-            z-index: 1000;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
-
-       
-
-        .text {
-            font-family: 'W95FA', sans-serif;
-            color: black;
-            font-size: 50px;
+        .label {
+            position: absolute;
+            font-size: 14px;
+            background: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Arial, sans-serif;
         }
-
-        @import url('https://fonts.cdnfonts.com/css/w95fa');
+        /* Custom Positions */
+        .img1 { top: 0px; left: 50px; }
+        .img2 { top: 120px; left: 200px; }
+        .img3 { top: 250px; left: 20px; }
+        .img4 { top: 350px; left: 250px; }
+        .img5 { top: 100px; left: 400px; }
+        .img6 { top: 400px; left: 100px; }
     </style>
 </head>
 <body>
-    <!-- Landing Page -->
-    <div class="landing-page">
-        <img src="assets/logo.png" alt="Trash Can Logo" class="trashcan-logo" onclick="location.href='pages/can.html'">
-        <img src="assets/translogo.png" alt="Trash Can Logo" style="width: 300px; height: auto;" class="trashcan-logo" onclick="location.href='pages/can.html'">
-    </div>
-    
-    <div class="text">
-        This is a test to see how text will appear on this page.
-    </div>
+    <div class="gallery">
+        <img src="at1.png" class="img1">
+        <span class="label img1">[01]</span>
 
-    <script>
+        <img src="at2.png" class="img2">
+        <span class="label img2">[01]</span>
 
-       
-    </script>
+        <img src="at3.png" class="img3">
+        <span class="label img3">[01]</span>
+
+        <img src="at4.png" class="img4">
+        <span class="label img4">[01]</span>
+
+        <img src="at5.png" class="img5">
+        <span class="label img5">[01]</span>
+
+        <img src="at6.png" class="img6">
+        <span class="label img6">[01]</span>
+    </div>
 </body>
 </html>
