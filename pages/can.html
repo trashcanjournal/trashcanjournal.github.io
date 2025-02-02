@@ -16,12 +16,12 @@
             background: #848884;
             display: flex;
             justify-content: left;
-            align-items: left;
-            
+            align-items: flex-start;  /* Adjusted to align top-left */
             color: #F3CFC6;  /* fixed typo from 'font-color' to 'color' */
             font-size: 100px;
             position: relative;
-            
+            min-height: 100vh;  /* Ensures body always fills the viewport height */
+            overflow: auto;  /* Enable scrolling */
         }
 
         /* This container will have images behind the text */
@@ -39,7 +39,6 @@
         }
         .gallery img {
             width: 150px;
-        
             object-fit: cover;
             transition: transform 0.3s ease-in-out;
         }
@@ -56,8 +55,9 @@
         /* Text will remain at the center */
         .text-container {
             position: relative;
-            z-index: 1;  /* This ensures the text stays on top of the images */
-            text-align: left;
+            z-index: 2;  /* Ensures the text stays on top of images */
+            text-align: left;  /* Aligns text to the left */
+            padding: 20px;  /* Optional: Adds spacing around the text */
         }
     </style>
     <script>
