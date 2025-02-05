@@ -13,6 +13,20 @@
                  url('W95FA.woff') format('woff'),
                  url('W95FA.ttf') format('truetype'),
                  url('W95FA.otf') format('opentype');
+           
+           header {
+            background-color: white; /* White background */
+            display: flex; /* Flexbox for alignment */
+            align-items: center; /* Center vertically */
+            justify-content: flex-start; /* Align to the left */
+            height: 100px; /* Adjust header height */
+            padding: 10px 20px; /* Add some space around */
+        }
+
+        /* Adjust logo size */
+        header img {
+            height: 80px; /* Adjust as needed */
+            width: auto; /* Maintain aspect ratio */
         }
         body {
             font-family: 'Verdana, sans-serif';
@@ -72,8 +86,11 @@ img {
     </style>
 </head>
 <body>
-     <img src="assets/translogo.png" alt="Trash Can Logo" style="width: 900px; height: auto;" class="trashcan-logo" onclick="location.href='pages/trashcan.html'">
-    </div>
+     <header>
+        <img src="translogo.png" alt="Logo">
+    </header>
+    
+    
     <!-- Text displayed over images -->
     <div class="text-container">
         <br>
