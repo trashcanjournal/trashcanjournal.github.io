@@ -18,13 +18,13 @@
 
    
         body {
-            font-family: 'Verdana, sans-serif';
+            font-family: Verdana, sans-serif;
             background: #D3D3D3;
             display: flex;
             justify-content: left;
             align-items: flex-start;  /* Adjusted to align top-left */
             color: #00000;
-            font-size: 40px;
+            font-size: 40px;!important;
             text-shadow 
         3px 3px 0 #D3FFE9, 
         -3px -3px 0 #D3FFE9,
@@ -54,11 +54,13 @@
             
   opacity: 1;
 width: 700px;
+            height: auto;  /* Maintain aspect ratio */
+    display: block;
         
         }
         .text-container {
-            font-family: 'Verdana, sans-serif';
-             font-size: 40px;
+            font-family: Verdana, sans-serif;
+             font-size: 40px;!important;
             position: relative;
             z-index: 2;  
             text-align: left;
